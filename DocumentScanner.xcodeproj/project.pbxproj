@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5D1736521DE70F1100B01F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736511DE70F1100B01F86 /* AppDelegate.swift */; };
-		5D1736541DE70F1100B01F86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736531DE70F1100B01F86 /* ViewController.swift */; };
 		5D1736571DE70F1100B01F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1736551DE70F1100B01F86 /* Main.storyboard */; };
 		5D1736591DE70F1100B01F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1736581DE70F1100B01F86 /* Assets.xcassets */; };
 		5D17365C1DE70F1100B01F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D17365A1DE70F1100B01F86 /* LaunchScreen.storyboard */; };
 		5D1736671DE70F1100B01F86 /* DocumentScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736661DE70F1100B01F86 /* DocumentScannerTests.swift */; };
 		5D1736721DE70F1100B01F86 /* DocumentScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736711DE70F1100B01F86 /* DocumentScannerUITests.swift */; };
+		5D1736801DE70F6D00B01F86 /* SobrCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D17367F1DE70F6D00B01F86 /* SobrCameraView.swift */; };
+		5D1736831DE70F8600B01F86 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736821DE70F8600B01F86 /* UIKitExtensions.swift */; };
+		5D1736861DE70FDC00B01F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736851DE70FDC00B01F86 /* MainViewController.swift */; };
+		5D1736881DE70FE500B01F86 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1736871DE70FE500B01F86 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		5D17364E1DE70F1100B01F86 /* DocumentScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1736511DE70F1100B01F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D1736531DE70F1100B01F86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D1736561DE70F1100B01F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D1736581DE70F1100B01F86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D17365B1DE70F1100B01F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		5D17366D1DE70F1100B01F86 /* DocumentScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1736711DE70F1100B01F86 /* DocumentScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerUITests.swift; sourceTree = "<group>"; };
 		5D1736731DE70F1100B01F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D17367F1DE70F6D00B01F86 /* SobrCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrCameraView.swift; sourceTree = "<group>"; };
+		5D1736821DE70F8600B01F86 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		5D1736851DE70FDC00B01F86 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D1736871DE70FE500B01F86 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,10 @@
 		5D1736501DE70F1100B01F86 /* DocumentScanner */ = {
 			isa = PBXGroup;
 			children = (
+				5D1736841DE70F9700B01F86 /* Helper */,
+				5D1736811DE70F7400B01F86 /* CameraView */,
 				5D1736511DE70F1100B01F86 /* AppDelegate.swift */,
-				5D1736531DE70F1100B01F86 /* ViewController.swift */,
+				5D1736891DE70FF000B01F86 /* Controller */,
 				5D1736551DE70F1100B01F86 /* Main.storyboard */,
 				5D1736581DE70F1100B01F86 /* Assets.xcassets */,
 				5D17365A1DE70F1100B01F86 /* LaunchScreen.storyboard */,
@@ -123,6 +131,31 @@
 				5D1736731DE70F1100B01F86 /* Info.plist */,
 			);
 			path = DocumentScannerUITests;
+			sourceTree = "<group>";
+		};
+		5D1736811DE70F7400B01F86 /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				5D17367F1DE70F6D00B01F86 /* SobrCameraView.swift */,
+			);
+			name = CameraView;
+			sourceTree = "<group>";
+		};
+		5D1736841DE70F9700B01F86 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5D1736821DE70F8600B01F86 /* UIKitExtensions.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		5D1736891DE70FF000B01F86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5D1736851DE70FDC00B01F86 /* MainViewController.swift */,
+				5D1736871DE70FE500B01F86 /* ImageViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D1736541DE70F1100B01F86 /* ViewController.swift in Sources */,
 				5D1736521DE70F1100B01F86 /* AppDelegate.swift in Sources */,
+				5D1736831DE70F8600B01F86 /* UIKitExtensions.swift in Sources */,
+				5D1736881DE70FE500B01F86 /* ImageViewController.swift in Sources */,
+				5D1736801DE70F6D00B01F86 /* SobrCameraView.swift in Sources */,
+				5D1736861DE70FDC00B01F86 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +365,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -374,6 +411,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -399,10 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Abdusha M A (HL79JK6V5Q)";
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.DocumentScanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reachoutsuite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a4655d83-f291-4290-8c89-565dbb327b4b";
 			};
 			name = Debug;
 		};
@@ -410,10 +451,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fingent Corp (XU3XTNFKT8)";
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.DocumentScanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reachoutsuite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a4655d83-f291-4290-8c89-565dbb327b4b";
 			};
 			name = Release;
 		};

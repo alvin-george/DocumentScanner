@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8EQ-m9-1Ck">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main ViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="DocumentScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,126 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPC-7y-tEA" customClass="SobrCameraView" customModule="DocumentScanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34o-Yb-4Gc">
+                                        <rect key="frame" x="273" y="469" width="55" height="30"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.36470588240000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Capture">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGk-KJ-hFD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkY-kN-h1F">
+                                        <rect key="frame" x="8" y="469" width="39" height="30"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.0" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Torch">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleTorch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X9I-Pc-m3c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="34o-Yb-4Gc" secondAttribute="bottom" constant="101" id="8pn-76-a4x"/>
+                                    <constraint firstItem="YkY-kN-h1F" firstAttribute="centerY" secondItem="34o-Yb-4Gc" secondAttribute="centerY" id="XIP-xq-Gxr"/>
+                                    <constraint firstItem="YkY-kN-h1F" firstAttribute="leading" secondItem="yPC-7y-tEA" secondAttribute="leading" constant="8" id="pQJ-wo-nm6"/>
+                                    <constraint firstAttribute="centerX" secondItem="34o-Yb-4Gc" secondAttribute="centerX" id="rVu-0t-doe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yPC-7y-tEA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AfQ-O5-GeN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yPC-7y-tEA" secondAttribute="bottom" id="L1r-rh-SHE"/>
+                            <constraint firstItem="yPC-7y-tEA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UiF-xW-Uj7"/>
+                            <constraint firstAttribute="trailing" secondItem="yPC-7y-tEA" secondAttribute="trailing" id="clJ-g0-rGf"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ryk-BP-YNU"/>
+                    <connections>
+                        <outlet property="cameraView" destination="yPC-7y-tEA" id="1ZZ-S4-ZXK"/>
+                        <segue destination="Yej-AD-HxV" kind="show" identifier="showImage" id="ckl-XP-afP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="819" y="162"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="rJc-KJ-zcb">
+            <objects>
+                <viewController id="Yej-AD-HxV" customClass="ImageViewController" customModule="DocumentScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lWx-kl-wBK"/>
+                        <viewControllerLayoutGuide type="bottom" id="tPR-s4-wHN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fGv-Dq-5LB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2jO-zy-OJi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxL-B5-2ds">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="Yej-AD-HxV" eventType="touchUpInside" id="fLd-Eb-S9O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GxL-B5-2ds" firstAttribute="leading" secondItem="fGv-Dq-5LB" secondAttribute="leadingMargin" id="A0g-hg-fdl"/>
+                            <constraint firstItem="2jO-zy-OJi" firstAttribute="leading" secondItem="fGv-Dq-5LB" secondAttribute="leading" id="Nkp-xZ-HVU"/>
+                            <constraint firstItem="tPR-s4-wHN" firstAttribute="top" secondItem="2jO-zy-OJi" secondAttribute="bottom" id="bmD-K2-blZ"/>
+                            <constraint firstItem="2jO-zy-OJi" firstAttribute="top" secondItem="lWx-kl-wBK" secondAttribute="bottom" id="kQr-04-D0c"/>
+                            <constraint firstAttribute="trailing" secondItem="2jO-zy-OJi" secondAttribute="trailing" id="lQQ-Mq-h4X"/>
+                            <constraint firstItem="GxL-B5-2ds" firstAttribute="top" secondItem="lWx-kl-wBK" secondAttribute="bottom" id="mbl-px-HY1"/>
+                            <constraint firstItem="2jO-zy-OJi" firstAttribute="top" secondItem="fGv-Dq-5LB" secondAttribute="top" id="t3c-C8-hTJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kQr-04-D0c"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="sourceImageView" destination="2jO-zy-OJi" id="ibk-Jq-5by"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lot-ZC-ph6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="162"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZnJ-Ka-zs3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8EQ-m9-1Ck" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdj-3C-bSx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3gV-3x-pZv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIx-nZ-Hbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31" y="202"/>
         </scene>
     </scenes>
 </document>
